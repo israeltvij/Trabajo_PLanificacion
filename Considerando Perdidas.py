@@ -77,7 +77,7 @@ xm = pulp.LpVariable.dicts("Meters",range(P),0,1,pulp.LpInteger)
 # OBJECTIVE FUNCTION
 model = pulp.LpProblem("System",pulp.LpMinimize)
 model += pulp.lpSum(CA[a]*xa[p][a] for p in range(P) for a in range(A)) \
-    + pulp.lpSum(CR[r]*xr[p][r] for p in range(P) for r in range(R)) \
+    + 0*pulp.lpSum(CR[r]*xr[p][r] for p in range(P) for r in range(R)) \
     + pulp.lpSum(CS[s]*xs[p][s] for p in range(P) for s in range(S)) \
     + pulp.lpSum(CZ[z]*xz[p][z] for p in range(P) for z in range(Z)) \
     + pulp.lpSum(CB[b]*xb[p][b] for p in range(P) for b in range(B)) \
